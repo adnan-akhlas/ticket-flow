@@ -32,7 +32,7 @@ export default function TicketCard({ ticket }) {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 transition-all hover:shadow-md">
+    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 transition-all hover:shadow-md w-full">
       <div className="flex justify-between items-start gap-4">
         <h3 className="text-xl font-bold text-slate-900 leading-tight">
           {ticket.title}
