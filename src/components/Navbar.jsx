@@ -7,7 +7,7 @@ export default function Navbar() {
 
   return (
     <header className="w-full bg-white border-b border-gray-400 relative">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <h1 className="text-xl font-semibold text-gray-800">Ticket Flow</h1>
