@@ -5,7 +5,6 @@
  * @param {string} className - Optional additional classes for the container
  */
 export default function ProgressCard({ title, count, from, to }) {
-  console.log(from, to);
   const cardClass = `relative overflow-hidden rounded-xl bg-linear-to-br ${from} ${to}  p-10 shadow-lg`;
   return (
     <div className={cardClass}>
