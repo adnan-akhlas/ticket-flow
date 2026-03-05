@@ -4,7 +4,7 @@ export default function ProgressTaskStatus({ tickets, onResolvedAction }) {
       <h3 className="text-lg font-semibold">In Progress Task</h3>
       {!tickets.length && (
         <div className="bg-gray-100 p-4 rounded-lg shadow-sm mb-3">
-          <p className="text-gray-800 font-medium">No In Progress Task</p>
+          <p className="text-gray-800 font-medium">No In Progress Task.</p>
         </div>
       )}
       {tickets.map((ticket) => (
