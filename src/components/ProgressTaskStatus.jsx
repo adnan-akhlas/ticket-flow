@@ -1,4 +1,4 @@
-export default function ProgressTaskStatus({ tickets }) {
+export default function ProgressTaskStatus({ tickets, onResolvedAction }) {
   return (
     <div className="space-y-2">
       <h3 className="text-lg font-semibold">In Progress Task</h3>
@@ -13,7 +13,10 @@ export default function ProgressTaskStatus({ tickets }) {
           </h3>
 
           {/* Action Button */}
-          <button className="w-full bg-[#10a342] hover:bg-[#0d8a37] text-white font-medium py-2.5 rounded-md transition-colors duration-200">
+          <button
+            onClick={() => onResolvedAction(ticket.id)}
+            className="w-full bg-[#10a342] hover:bg-[#0d8a37] text-white font-medium py-2.5 rounded-md transition-colors duration-200"
+          >
             Complete
           </button>
         </div>

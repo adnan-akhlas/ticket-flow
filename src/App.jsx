@@ -50,6 +50,22 @@ export default function App() {
       }
       return ticket;
     });
+    toast.success("Ticket progress has been started.");
+    setTickets(newTickets);
+  };
+
+  const handleResolvedAction = (id) => {
+    const ticket = tickets.find((ticket) => ticket.id === id);
+    if (ticket.status === "Resolved") {
+      return toast.warn(`Ticket already in Resolved.`);
+    }
+    const newTickets = tickets.map((ticket) => {
+      if (ticket.id === id) {
+        ticket.status = "Resolved";
+      }
+      return ticket;
+    });
+    toast.success("Ticket resolved sucessfully.");
     setTickets(newTickets);
   };
 
@@ -80,7 +96,10 @@ export default function App() {
           <div className="col-span-4">
             <h2 className="my-2 text-2xl font-bold">Task Status</h2>
             <div className="space-y-4 mt-4">
-              <ProgressTaskStatus tickets={progressTickets} />
+              <ProgressTaskStatus
+                tickets={progressTickets}
+                onResolvedAction={handleResolvedAction}
+              />
               <ResolvedTaskStatus tickets={resolvedTickets} />
             </div>
           </div>
