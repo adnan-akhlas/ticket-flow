@@ -1,16 +1,22 @@
-# React + Vite
+1. **JSX (JavaScript XML):**
+   JSX is a syntax extension that lets you write HTML-like structures directly inside your JavaScript code. It is used because it makes the UI structure much easier for humans to read and write compared to using raw JavaScript logic. Under the hood, React takes this JSX and compiles it into standard `React.createElement()` calls that the browser can actually understand.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+2. **State vs. Props:**
+   Think of **props** as external configuration or "genes" passed from a parent component to a child; they are read-only and cannot be changed by the component receiving them. **State**, on the other hand, is the component’s internal memory—it is managed entirely within the component and can be updated as needed to reflect user interactions or data changes.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+3. **The `useState` Hook:**
+   The `useState` hook is the primary tool used to add state to functional components. When you call it, it returns an array containing two items: the current state value and a "setter" function used to update that value. For example, `const [tickets, setTickets] = useState([])` initializes an empty list that you can update later by calling `setTickets`.
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+---
 
-## Expanding the ESLint configuration
+4. **Sharing State Between Components:**
+   The most common way to share data is "lifting state up," which involves moving the state to the closest common parent of the components that need it. For global data that many different components need (like a user's login status), the **Context API** is used to avoid "prop drilling". In very large or complex applications, developers often use dedicated libraries like Redux to manage state centrally.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+5. **Event Handling in React:**
+   React handles events like clicks or form submissions using a camelCase naming convention, such as `onClick` instead of the traditional HTML `onclick`. Instead of passing a string of code, you pass an actual JavaScript function to the event handler, allowing the component to execute specific logic when the user interacts with the UI.

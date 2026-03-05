@@ -23,6 +23,10 @@ export default function App() {
       .finally(() => setIsLoading(false));
   }, []);
 
+  const unresolvedTickets = useMemo(() => {
+    return tickets.filter((t) => t.status !== "Resolved");
+  }, [tickets]);
+
   const progressCount = useMemo(() => {
     return tickets.filter((t) => t.status === "In Progress").length;
   }, [tickets]);
@@ -86,7 +90,7 @@ export default function App() {
               {!isLoading ? (
                 <TicketSection
                   onProgressAction={handleProgressAction}
-                  tickets={tickets}
+                  tickets={unresolvedTickets}
                 />
               ) : (
                 <TicketSkeleton />
